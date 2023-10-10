@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mood-check',
@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./mood-check.component.css']
 })
 export class MoodCheckComponent {
+  @Output() moodSelected = new EventEmitter<string>();
 
-  public testt(mood: string){
-    console.log(mood)
+  selectMood(mood: string) {
+    console.log(mood);
+    this.moodSelected.emit(mood);
+    
   }
 }

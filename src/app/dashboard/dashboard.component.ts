@@ -1,30 +1,87 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import * as Highcharts from 'highcharts';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-  chartData: any = [];
-  chartOptions: any = {}; // Define chart options here
+export class DashboardComponent {
+  chart: Highcharts.Chart;
 
-  ngOnInit(): void {
-    // Load your chart data here
-    this.chartData = [
-      ['Task', 'Hours per Day'],
-      ['Work', 11],
-      ['Eat', 2],
-      ['Commute', 2],
-      ['Watch TV', 5],
-      ['Sleep', 7],
-    ];
+  constructor() {
+    this.chart = new Highcharts.Chart({
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Mood Statistics'
+      },
+      xAxis: {
+        categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5']
+      },
+      yAxis: {
+        title: {
+          text: 'Count'
+        }
+      },
+      plotOptions: {
+        column: {
+          stacking: 'normal'
+        }
+      },
+      series: [
+        {
+          type: 'column',
+          name: 'Happy',
+          color: 'green',
+          data: [0, 0, 0, 0, 0]
+        },
+        {
+          type: 'column',
+          name: 'Normal',
+          color: 'blue',
+          data: [0, 0, 0, 0, 0]
+        },
+        {
+          type: 'column',
+          name: 'Sad',
+          color: 'red',
+          data: [0, 0, 0, 0, 0]
+        },
+        {
+          type: 'column',
+          name: 'Angry',
+          color: 'orange',
+          data: [0, 0, 0, 0, 0]
+        }
+      ]
+    });
+  }
 
-    // Define chart options with width and height as numbers
-    this.chartOptions = {
-      width: 500,
-      height: 300
-      // Add any other chart options you need here
-    };
+  // Function to update the chart based on button click
+  add(mood: string) {
+    // Define the index of the series based on the mood
+    let seriesIndex = -1;
+    switch (mood) {
+      case 'Happy':
+        seriesIndex = 0;
+        break;
+      case 'Normal':
+        seriesIndex = 1;
+        break;
+      case 'Sad':
+        seriesIndex = 2;
+        break;
+      case 'Angry':
+        seriesIndex = 3;
+        break;
+    }
+
+    // Check if the series index is valid
+    if (seriesIndex >= 0 && seriesIndex < this.chart.series.length) {
+      // Update the data for the corresponding series
+      this.chart.series[seriesIndex].addPoint(1); // Add 1 to the data point
+    }
   }
 }

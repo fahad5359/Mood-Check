@@ -11,8 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MoodCheckComponent } from './mood-check/mood-check.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { GoogleChartsModule } from 'angular-google-charts'; // Import the module
-
+import { ChartModule } from 'angular-highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import { GoogleChartsModule } from 'angular-google-charts'; // Import the module
     BrowserAnimationsModule,
     MatTabsModule,
     MatIconModule,
-    GoogleChartsModule 
+    ChartModule,
+    
 
   ],
   providers: [],

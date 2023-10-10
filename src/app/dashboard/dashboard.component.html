@@ -1,8 +1,5 @@
-<div>
-    <google-chart
-      [data]="chartData"
-      chartType="PieChart"
-      [options]="chartOptions"
-    ></google-chart>
-  </div>
-  
+<button (click)="add('Happy')">Add Point!</button>
+<div [chart]="chart"></div> 
+
+<div [chart]="chart"></div>
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"></highcharts-chart>
