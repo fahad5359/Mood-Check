@@ -4,48 +4,30 @@
     <!-- Home -->
     <mat-tab label="Home">
       <ng-template mat-tab-label>
-        
-        <span class="material-icons">
-            minimize
-            </span>
+        <span class="material-icons">minimize</span>
         <span>Home</span>
       </ng-template>
       
       <h1 class="stle">Hello</h1>
     </mat-tab>
   
-
-    <mat-tab label="Income Sheet">
+    <!-- Mood check tab-->
+    <mat-tab label="Mood-check">
       <ng-template mat-tab-label>
         <span class="material-icons">face</span>
       </ng-template>
-
       <app-mood-check></app-mood-check>
-  
     </mat-tab>
   
-
-    <mat-tab label="Balance Sheet">
+    <!-- Dashboard tab-->
+    <mat-tab label="dashboard">
       <ng-template mat-tab-label>
-        <span class="material-icons">
-            dashboard
-            </span>
+        <span class="material-icons">dashboard</span> 
         <!-- <span>Dash board</span> -->
       </ng-template>
       <app-dashboard></app-dashboard>
-  
     </mat-tab>
-  
-  <!-- Financial Report -->
-    <!-- <mat-tab label="Financial Report">
-      <ng-template mat-tab-label>
-        <mat-icon>analytics</mat-icon>
-        <span>Full Financial Report</span>
-      </ng-template>
-      <app-getfinancial-report></app-getfinancial-report>
-  
-    </mat-tab> -->
-  
+
   
   </mat-tab-group>
   

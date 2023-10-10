@@ -11,6 +11,5 @@ export class MoodCheckComponent {
   selectMood(mood: string) {
     console.log(mood);
     this.moodSelected.emit(mood);
-    
   }
 }

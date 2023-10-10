@@ -12,7 +12,6 @@ import { MoodCheckComponent } from './mood-check/mood-check.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { ChartModule } from 'angular-highcharts';
-import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
