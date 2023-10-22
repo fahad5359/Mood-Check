@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
 import {DashboardComponent} from "../dashboard/dashboard.component";
+import {MoodService} from "../mood.service";
 
 @Component({
   selector: 'app-mood-check',
@@ -7,29 +8,19 @@ import {DashboardComponent} from "../dashboard/dashboard.component";
   styleUrls: ['./mood-check.component.css']
 })
 export class MoodCheckComponent {
-  @ViewChild(DashboardComponent) dashboardComponent!: DashboardComponent;
-
-  @Output() addSadStudent = new EventEmitter<void>();
-  @Output() addHappyStudent = new EventEmitter<void>();
-  @Output() addAngryStudent = new EventEmitter<void>();
-  @Output() addNormalStudent = new EventEmitter<void>();
-
-
-
-  triggerAddSad() {
-    this.addSadStudent.emit();
-  }
+  constructor(private moodService: MoodService) {}
 
   triggerAddHappy() {
-    this.dashboardComponent.addHappyStudent();
-  }
-
-  triggerAddAngry() {
-
-    this.addAngryStudent.emit();
+    this.moodService.triggeraddHappyStudent();
   }
 
   triggerAddNormal() {
-    this.addNormalStudent.emit();
+    this.moodService.triggerAddNormalStudent();
+  }
+  triggerAddSad() {
+    this.moodService.triggerSadStudent();
+  }
+  triggerAddAngry() {
+    this.moodService.triggerAngryStudent();
   }
 }

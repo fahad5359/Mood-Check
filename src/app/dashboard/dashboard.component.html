@@ -1,15 +1,9 @@
+<div class="ggs">
+  <canvas baseChart id="myChart1" type="pie" [data]="lineChartData" width="200" height="200"></canvas>
+  <hr>
+  <canvas baseChart id="myChart2" type="doughnut" [data]="lineChartData"></canvas>
+  <hr>
+  <canvas baseChart id="myChart3" type="bar" [data]="lineChartData"></canvas>
+  <hr>
 
-  <div><canvas baseChart id="myChart1" type="pie" [data]="lineChartData"></canvas></div>
-  <div><canvas baseChart id="myChart2" type="doughnut" [data]="lineChartData"></canvas></div>
-  <div><canvas baseChart id="myChart3" type="bar" [data]="lineChartData"></canvas></div>
-  <div><canvas baseChart id="myChart4" type="polarArea" [data]="lineChartData"></canvas></div>
-
-
-
-<button (click)="addSadStudent()">Add Sad</button>
-<button (click)="addHappyStudent()">Add Happy</button>
-<button (click)="addAngryStudent()">Add Angry</button>
-<button (click)="addNormalStudent()">Add Normal</button>
-
-
-  <app-mood-check (addNormalStudent)="addNormalStudent()"></app-mood-check>
+</div>

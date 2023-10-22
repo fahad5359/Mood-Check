@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MoodCheckComponent } from './mood-check/mood-check.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {NgChartsModule} from "ng2-charts";
+import {MoodService} from "./mood.service";
 
 
 
@@ -32,7 +33,7 @@ import {NgChartsModule} from "ng2-charts";
 
 
   ],
-  providers: [],
+  providers: [MoodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

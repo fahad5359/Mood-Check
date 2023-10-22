@@ -1,4 +1,5 @@
-.chart-container {
+.ggs {
+  width: 500px;
+  height: 30vh; /* Set the height to 100% of the viewport height */
   display: flex;
-  justify-content: center;  /* You can use other flex properties for spacing */
 }

@@ -1,46 +1,70 @@
-import {Component, ViewChild} from '@angular/core';
-import { Mood } from "../entities/mood";
-import {MoodCheckComponent} from "../mood-check/mood-check.component";
+import {Component, OnInit, ViewChild} from '@angular/core';
+
+import {MoodService} from "../mood.service";
+import {Mood} from "../entities/mood";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+    mood = { normal: 0,happy: 0, sad:0,angry:0 };
 
-  private mood: Mood;
+    lineChartData: any; // Define the property
 
-  constructor() {
-    this.mood = new Mood(0, 0, 0, 0);
-  }
+    constructor(private moodService: MoodService) {
+        this.updateChartData(); // Initialize the chart data
+    }
 
-  get lineChartData() {
-    return {
-      labels: ["Sad", "Happy", "Angry", "Normal"],
-      datasets: [{
-        data: [this.mood.sad, this.mood.happy, this.mood.angry, this.mood.normal],
-        label: 'Mood Check'
-      }]
-    };
-  }
+    ngOnInit() {
+        this.moodService.addHappyStudent$.subscribe(() => {
+            this.addHappyStudent();
+        });
+        this.moodService.addNormalStudent$.subscribe(() => {
+            this.addNormalStudent();
+        });
+        this.moodService.addSadStudent$.subscribe(() => {
+            this.addSadStudent();
+        });
 
-public  addNormalStudent() {
-    this.mood.normal += 1;
-  }
+        this.moodService.addAngryStudent$.subscribe(() => {
+            this.addAngryStudent();
+        });
+    }
 
-  public addSadStudent(){
-    this.mood.sad += 1;
-  }
-  public addAngryStudent(){
-    this.mood.angry += 1;
-  }
-  public addHappyStudent(){
-    this.mood.happy += 1;
-  }
+    addHappyStudent() {
+        this.mood.happy += 1;
+        this.updateChartData(); // Update the chart data
+    }
 
+    addNormalStudent() {
+        this.mood.normal += 1;
+        this.updateChartData(); // Update the chart data
+    }
 
+    addSadStudent() {
+        this.mood.sad += 1;
+        this.updateChartData(); // Update the chart data
+    }
 
+    addAngryStudent() {
+        this.mood.angry += 1;
+        this.updateChartData(); // Update the chart data
+    }
 
+    updateChartData() {
+        // Update your chart data here
+        this.lineChartData = {
+            labels: ["Happy","Normal","Sad","Angry"],
+            datasets: [{
+                data: [this.mood.happy,this.mood.normal,this.mood.sad,this.mood.angry],
+                label: 'Mood Check'
+            }]
+        };
+    }
 
+    getLineChartData() {
+        return this.lineChartData; // Return the updated chart data
+    }
 }
