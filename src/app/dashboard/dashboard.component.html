@@ -1,5 +1,15 @@
-<!-- <button (click)="add('Happy')">Add Point!</button>
-<div [chart]="chart"></div> 
 
-<div [chart]="chart"></div>
-<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"></highcharts-chart> -->
+  <div><canvas baseChart id="myChart1" type="pie" [data]="lineChartData"></canvas></div>
+  <div><canvas baseChart id="myChart2" type="doughnut" [data]="lineChartData"></canvas></div>
+  <div><canvas baseChart id="myChart3" type="bar" [data]="lineChartData"></canvas></div>
+  <div><canvas baseChart id="myChart4" type="polarArea" [data]="lineChartData"></canvas></div>
+
+
+
+<button (click)="addSadStudent()">Add Sad</button>
+<button (click)="addHappyStudent()">Add Happy</button>
+<button (click)="addAngryStudent()">Add Angry</button>
+<button (click)="addNormalStudent()">Add Normal</button>
+
+
+  <app-mood-check (addNormalStudent)="addNormalStudent()"></app-mood-check>

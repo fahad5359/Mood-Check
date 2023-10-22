@@ -10,8 +10,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MoodCheckComponent } from './mood-check/mood-check.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {NgChartsModule} from "ng2-charts";
 
-import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
@@ -28,8 +28,8 @@ import { ChartModule } from 'angular-highcharts';
     BrowserAnimationsModule,
     MatTabsModule,
     MatIconModule,
-    ChartModule,
-    
+    NgChartsModule
+
 
   ],
   providers: [],
