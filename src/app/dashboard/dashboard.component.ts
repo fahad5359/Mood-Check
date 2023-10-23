@@ -10,11 +10,12 @@ import {Mood} from "../entities/mood";
 })
 export class DashboardComponent implements OnInit {
     mood = { normal: 0,happy: 0, sad:0,angry:0 };
-
+    // mood:Mood;
     lineChartData: any; // Define the property
 
     constructor(private moodService: MoodService) {
         this.updateChartData(); // Initialize the chart data
+        // this.mood = new Mood(0,0,0,0);
     }
 
     ngOnInit() {
@@ -35,6 +36,7 @@ export class DashboardComponent implements OnInit {
 
     addHappyStudent() {
         this.mood.happy += 1;
+
         this.updateChartData(); // Update the chart data
     }
 

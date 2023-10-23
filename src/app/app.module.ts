@@ -12,6 +12,8 @@ import { MoodCheckComponent } from './mood-check/mood-check.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {NgChartsModule} from "ng2-charts";
 import {MoodService} from "./mood.service";
+import {MatTableModule} from "@angular/material/table";
+import { StudentNameComponent } from './student-name/student-name.component';
 
 
 
@@ -20,7 +22,8 @@ import {MoodService} from "./mood.service";
     AppComponent,
     HomeComponent,
     MoodCheckComponent,
-    DashboardComponent
+    DashboardComponent,
+    StudentNameComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import {MoodService} from "./mood.service";
     BrowserAnimationsModule,
     MatTabsModule,
     MatIconModule,
-    NgChartsModule
+    NgChartsModule,
+    MatTableModule
 
 
   ],

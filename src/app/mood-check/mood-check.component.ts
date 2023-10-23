@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
 import {DashboardComponent} from "../dashboard/dashboard.component";
 import {MoodService} from "../mood.service";
+import {StudentsNames} from "../entities/students-names";
 
 @Component({
   selector: 'app-mood-check',
@@ -8,6 +9,7 @@ import {MoodService} from "../mood.service";
   styleUrls: ['./mood-check.component.css']
 })
 export class MoodCheckComponent {
+
   constructor(private moodService: MoodService) {}
 
   triggerAddHappy() {
@@ -23,4 +25,9 @@ export class MoodCheckComponent {
   triggerAddAngry() {
     this.moodService.triggerAngryStudent();
   }
+
+  // populate constructor with names then. Then add them in HTML
+
+
+
 }

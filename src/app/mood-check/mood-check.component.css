@@ -14,13 +14,13 @@ h1{
     align-items: center; /* Center horizontally */
     padding: 11px;
     margin-top: 100px;
-    border: 1px dotted black
+    /*border: 1px dotted black*/
 }
 
-.container { 
+.container {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     flex-direction: column;
     height: 100%;
     /* width: 50%; */
@@ -28,21 +28,21 @@ h1{
 }
 
 .box {
-    
+
     min-width: fit-content;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     display: flex;
-    
+
     flex: 1; /* Distribute available space evenly among boxes */
-    align-items: center; 
-    margin: 10px; 
+    align-items: center;
+    margin: 10px;
     width: 100%;
-    
-    
+
+
 }
 #box1{
-    
+
     color: #494949;
 }
 
@@ -58,11 +58,11 @@ h1{
 #box3 {
     width: 70%;
     min-width: fit-content;
-    
+
 }
 .emoji{
     padding: 70px;
-    
+
 }
 .emoji:hover {
     cursor: pointer;
@@ -70,24 +70,24 @@ h1{
     border-radius: 20px;
     transition: background-color 0.5s ease;
     /* transform: scale(1.9); */
-    
+
 }
 
 .emoji:active {
     background-color: rgb(255, 0, 72);
     border-radius: 20px;
     transition: background-color 1.2s ease;
-    
+
     transform: scale(0.9);
-    
-   
+
+
 }
 
 
 #box3 {
     border: 2px solid #ccc;
     /* background-color: rgb(251, 154, 198); */
-    
+
 }
 
 .chartContainer{
