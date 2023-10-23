@@ -7,16 +7,10 @@ import {StudentsNames} from "../entities/students-names";
   styleUrls: ['./student-name.component.css']
 })
 export class StudentNameComponent {
-    showMoodComponent=false;
+    panelOpenState = false;
+
     studentNames : StudentsNames;
   constructor() {
-
       this.studentNames = new StudentsNames(["Fahad","Asma","Kolaib"])
-  }
-  displayMood() {
-    console.log("Mood displayed")
-      this.showMoodComponent = !this.showMoodComponent;
-      // Using ngFor show and hide component based on a button press.
-
   }
 }

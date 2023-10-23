@@ -1,19 +1,8 @@
 
-h1{
-    font-size: 60px;
-}
 
-.largetsText{
-    font-size: 100px;
-}
 #megaContainer {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
-    height: 1000px;
-    align-items: center; /* Center horizontally */
-    padding: 11px;
-    margin-top: 100px;
     /*border: 1px dotted black*/
 }
 
@@ -21,10 +10,10 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100%;
+    flex-direction: row;
+
     /* width: 50%; */
-    margin: 20px;
+
 }
 
 .box {
@@ -33,18 +22,12 @@ h1{
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     display: flex;
-
-    flex: 1; /* Distribute available space evenly among boxes */
     align-items: center;
-    margin: 10px;
-    width: 100%;
+
 
 
 }
-#box1{
 
-    color: #494949;
-}
 
 #box2 {
     display: flex;
@@ -53,44 +36,38 @@ h1{
     justify-content: center;
     box-shadow: 1px 2px 4px rgba(20, 20, 20, 0.3); /* Adding a soft cast shadow */
     height: 100%;
-}
-
-#box3 {
-    width: 70%;
-    min-width: fit-content;
+    border-radius: 5px;
 
 }
+
+
 .emoji{
-    padding: 70px;
-
+    padding: 50px;
+    background-color: aliceblue;
 }
 .emoji:hover {
     cursor: pointer;
-    background-color: rgb(83, 208, 156);
-    border-radius: 20px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 50px;
     transition: background-color 0.5s ease;
+    transform: scale(1.10);
     /* transform: scale(1.9); */
 
 }
-
 .emoji:active {
+    background-color: rgb(160, 202, 139);
+
+    transform: scale(1.10);
+
+}
+#angry:active {
     background-color: rgb(255, 0, 72);
-    border-radius: 20px;
-    transition: background-color 1.2s ease;
 
-    transform: scale(0.9);
-
-
+    transition: background-color 0.2s ease, transform 1.2s ease; /* Combine both transitions */
+    transform: scale(4.10); /* Define the transform property separately */
 }
 
 
-#box3 {
-    border: 2px solid #ccc;
-    /* background-color: rgb(251, 154, 198); */
 
-}
 
-.chartContainer{
-    display: flex;
-    flex-direction: column;
-}
+

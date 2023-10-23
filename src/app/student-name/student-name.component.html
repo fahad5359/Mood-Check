@@ -1,23 +1,13 @@
-
-<mat-table [dataSource]="studentNames.listOfNames">
-  <!-- Define the columns for your table -->
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-    <mat-cell *matCellDef="let name">{{ name }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="weight">
-    <mat-header-cell *matHeaderCellDef>Button</mat-header-cell>
-    <mat-cell *matCellDef="let element"><button (click)="displayMood()">Mood</button></mat-cell>
-  </ng-container>
-
-  <!-- Define the table rows -->
-  <mat-header-row *matHeaderRowDef="['name', 'weight']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['name', 'weight']"></mat-row>
-</mat-table>
-
-<div *ngIf="showMoodComponent">
-<app-mood-check></app-mood-check>
-<!--  If a mood is pressed go to method and hide component-->
-
-</div>
+<mat-accordion [multi]="false">
+  <mat-expansion-panel hideToggle *ngFor="let names of studentNames.listOfNames">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ names }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Assign mood
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-mood-check></app-mood-check>
+  </mat-expansion-panel>
+</mat-accordion>

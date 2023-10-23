@@ -14,6 +14,7 @@ import {NgChartsModule} from "ng2-charts";
 import {MoodService} from "./mood.service";
 import {MatTableModule} from "@angular/material/table";
 import { StudentNameComponent } from './student-name/student-name.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 
@@ -33,7 +34,8 @@ import { StudentNameComponent } from './student-name/student-name.component';
     MatTabsModule,
     MatIconModule,
     NgChartsModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule
 
 
   ],
